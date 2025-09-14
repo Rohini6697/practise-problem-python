@@ -4,32 +4,23 @@ import random
 words = {'python':'A popular programming language used for AI, web, and data analysis.','elephant':'The largest land animal with a trunk.','volcano':'A mountain that can erupt lava and ash'}
 
 x,y = random.choice(list((words.items())))
-print(y)
-
-attepmpt = len(x)
-
+print('Clue : ',y)
 hide = ['__']*len(x)
-print(hide)
+attempt = len(x)
 
-    # print('__ ',end='')
-s = input('enter your guess first letter : ')
-while(attepmpt>0):
+while attempt>0:
+    print(hide,'                 ','chances left :',attempt)
+    s = input('enter your guess first letter : ')
     for ch in range(len(x)):
         if x[ch] == s:
             hide[ch] = s 
-            attepmpt -=1
-        else:
-            print('try again')
-    print(hide)
-# def hangman(guess):
+            print('Correct Guess')
+    if s not in x:
+        attempt -=1
+        print('Wrong Guess')
     
-#     x = list(words.keys())
-#     # print((x))
-#     # print(x[0])
-
-#     y = list(words.values())
-#     print(y[0])
-#     for ch in x[0]:
-#         print('__   ',end='')
-# g = input('enter your guess : ')
-# hangman(g)
+    if '__' not in hide:
+        print('You Win! The word is :',x)
+        break
+else:
+    print('You Lose! The word is :',x)

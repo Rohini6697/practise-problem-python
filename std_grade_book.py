@@ -2,7 +2,7 @@ dictionary = {}
 
 while True:
     print('GRADE CARD MENU : ')
-    print('1.Add Student Name and Grade ')
+    print('1. Add Student Name and Grade ')
     print('2. View Students and Grade')
     print('3. Average Grade')
     print('4. Heighest Grade')

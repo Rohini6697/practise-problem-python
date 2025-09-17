@@ -1,6 +1,6 @@
 with open('passwords.txt','r') as f:
     passwords = f.readlines()
-    print(passwords)
+    # print(passwords)
 
     for line in passwords:
         parts = line.strip().split(',')
@@ -21,22 +21,37 @@ def add_credentials():
 
 
 def veiw_credentilas():
-    print()
-    print(f'website : {website}')
-    print(f'username : {username}')
-    print(f'password : {password}')
+    with open('passwords.txt','r') as f:
+        passwords = f.readlines()
+        parts = line.strip().split(',')
+        if len(parts) == 3:
+            website,username,password = parts
+        print()
+        print(f'website : {website}')
+        print(f'username : {username}')
+        print(f'password : {password}')
 
 def search_credentials():
-    with open('passwords.txt','r'):
-        print()
+    with open('passwords.txt','r') as f:
+        passwords = f.readlines()
         search = input('search : ')
-        if search.lower() in website.lower():
-            print('website found')
-            print()
-            print(f'website : {website}')
-            print(f'user name : {username}')
-            print(f'password : {passwords}')
-            print()
+        for line in passwords:
+            parts = line.strip().split(',')
+            if len(parts) == 3:
+                website,username,password = parts
+
+            # print()
+            
+                if search.lower() in website.lower():
+                    print('website found')
+                    print()
+                    print(f'website : {website}')
+                    print(f'user name : {username}')
+                    print(f'password : {password}')
+                    print()
+                else:
+                    print('website not found')
+                    # pass
 while True:
     print('1. Add new credentials')
     print('2. View credentials for a specific website')

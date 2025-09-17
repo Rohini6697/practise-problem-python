@@ -1,0 +1,17 @@
+Alex,78
+Meera,88
+John,92
+Rahul,80
+Divya,89
+Kiran,95
+Latha,70
+Manoj,82
+Priya,91
+Arjun,87
+Nisha,76
+Vikram,93
+Kavya,84
+Suraj,79
+Deepa,86
+Ramesh,94
+Swati,81

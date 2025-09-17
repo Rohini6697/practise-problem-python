@@ -1,29 +1,23 @@
 import random
 # while True:
 mark = 0
-try:
-    with open('quiz.txt','r') as f:
-        quiz = f.readlines()
-        
-        for i in len(quiz):
+with open('quiz.txt','r') as f:
+    quiz = f.readlines()
+    random.shuffle(quiz)
+    for quizes in range(len(quiz)):
+        # score = 0
+        parts = quiz[quizes].strip().split(',')
+        if len(parts) == 2:
+            question,answer = parts
+            print("Q : ",question)
 
-            quizes = random.choice(quiz)
-            parts = quizes.strip().split(',')
-            if len(parts) == 2:
-                question,answer = parts
-                print("Q : ",question)
+        answers = input('A : ')
 
-
-except FileNotFoundError:
-    print('file not found')
-
-    
-
-    answers = input('A : ')
-
-    if answers.lower() == answer.lower():
-        mark +=1
-        print(f'Right Answer        {mark}')
-    
-    else:
-        print('wrong answer')
+        if answers.lower() == answer.lower():
+            mark +=1
+            print('Right Answer')
+            
+        else:
+            print(f'wrong answer      correct answer : {answer}')
+    print()
+    print(f'Total Score : {mark}')

@@ -1,12 +1,10 @@
 with open('passwords.txt','r') as f:
     passwords = f.readlines()
-    # print(passwords)
 
     for line in passwords:
         parts = line.strip().split(',')
         if len(parts) == 3:
             website,username,password = parts
-            # print(website)
 
 
 
@@ -40,7 +38,6 @@ def search_credentials():
             if len(parts) == 3:
                 website,username,password = parts
 
-            # print()
             
                 if search.lower() in website.lower():
                     print('website found')
@@ -51,7 +48,6 @@ def search_credentials():
                     print()
                 else:
                     print('website not found')
-                    # pass
 while True:
     print('1. Add new credentials')
     print('2. View credentials for a specific website')

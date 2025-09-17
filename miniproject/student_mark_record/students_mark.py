@@ -1,6 +1,5 @@
 def add_record():
     with open('students.txt','a') as f:
-        # data = f.readlines()
 
         name = input('enter student name : ')
         mark = input(f'enter {name}s mark : ')
@@ -46,7 +45,6 @@ def top_scorer():
                 if int(mark) > largest:
                     largest = mark
                     top_scorer_student = []
-                    # print(largest)
                 if mark == largest:
                     top_scorer_student.append(student)
         

@@ -5,7 +5,7 @@ def add_record():
         name = input('enter student name : ')
         mark = input(f'enter {name}s mark : ')
 
-        record = f'{name},{mark}'
+        record = f'{name},{mark}\n'
         f.write(record)
 
 def view_record():
@@ -30,7 +30,7 @@ def average_mark():
             if len(parts) == 2:
                 student,marks = parts
                 total += int(marks) 
-        average = total/len(line)
+        average = total/len(marks)
         print(f'average mark : {average}')
 
 def top_scorer():
@@ -45,11 +45,15 @@ def top_scorer():
                 mark = int(mark)
                 if int(mark) > largest:
                     largest = mark
-                    top_scorer_student = student
+                    top_scorer_student = []
                     # print(largest)
+                if mark == largest:
+                    top_scorer_student.append(student)
         
         if largest >=0:
-            print(f'top scorer is {top_scorer_student} who scored {largest}')
+            for s in top_scorer_student:
+                print(f'top scorer is {s} who scored {largest}')
+        
         
     
 
